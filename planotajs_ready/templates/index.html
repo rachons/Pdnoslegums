@@ -1,0 +1,17 @@
+<h1>Tavi uzdevumi</h1>
+<form method="POST" action="/add">
+  <input name="nosaukums" placeholder="Nosaukums">
+  <input name="termins" type="date">
+  <select name="prioritate">
+    <option>Zema</option>
+    <option>Vidēja</option>
+    <option>Augsta</option>
+  </select>
+  <button type="submit">Pievienot</button>
+</form>
+<ul>
+{% for task in tasks %}
+  <li>{{ task['nosaukums'] }} līdz {{ task['termins'] }} ({{ task['prioritate'] }})</li>
+{% endfor %}
+</ul>
+<a href="/logout">Iziet</a>
